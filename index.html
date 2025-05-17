@@ -1,8 +1,330 @@
-<!doctype html>
-<html>
-	<head>Potenza fitness</head>
-	<body>
-		<h1>Potenza fitness</h1>
-		<h2>Launching soon</h2>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potenza Fitness - Launching Soon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --background: #0D0D0D;
+            --primary: #FF4500;
+            --text-heading: #FFFFFF;
+            --text-body: #CCCCCC;
+            --accent: #FF8C66;
+            --button-hover: #E03D00;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-body);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .brand-font {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+        
+        .hero-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+        
+        .countdown-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-heading);
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: var(--button-hover);
+            border-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+        }
+        
+        .form-control {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-heading);
+            padding: 12px;
+        }
+        
+        .form-control:focus {
+            background-color: rgba(255,255,255,0.15);
+            border-color: var(--primary);
+            color: var(--text-heading);
+            box-shadow: 0 0 0 0.2rem rgba(255, 69, 0, 0.25);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .social-icons a {
+            color: var(--text-heading);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .features-card {
+            background-color: rgba(13, 13, 13, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .features-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .sprinter-logo {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .footer {
+            background-color: rgba(0,0,0,0.3);
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .bg-gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 69, 0, 0.2) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .logo-svg {
+            fill: white;
+        }
+        
+        .swoosh {
+            fill: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="hero-section">
+            <div class="bg-gradient-overlay"></div>
+            <div class="container">
+                <div class="text-center logo-container">
+                    <!-- Logo SVG with sprinter silhouette -->
+                    <svg class="sprinter-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sprinter silhouette -->
+                        <path class="logo-svg" d="M100,50 C95,50 91,54 90,58 C89,63 90,70 92,75 C94,80 97,84 98,89 C99,94 98,100 96,105 C94,110 90,114 90,120 C90,126 93,132 97,136 C101,140 106,142 110,144 C114,146 118,148 120,152 C122,156 122,161 120,165 C118,169 114,172 110,173 C106,174 101,172 98,169 C95,166 94,161 95,157"/>
+                        <!-- Red-orange swoosh -->
+                        <path class="swoosh" d="M60,100 C70,80 90,70 120,70 C150,70 170,90 180,110 C160,90 130,80 100,90 C70,100 60,120 60,140"/>
+                    </svg>
+                    <h1 class="mt-4 brand-font">POTENZA FITNESS</h1>
+                    <p class="lead">Unleash your inner strength. Coming soon.</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="countdown-container">
+                            <div class="row">
+                                <div class="col-3 countdown-item">
+                                    <div class="countdown-number" id="days">30</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="col-3 countdown-item">
+                                    <div class="countdown-number" id="hours">24</div>
+                                    <div class="countdown-label">Hours</div>
+                                </div>
+                                <div class="col-3 countdown-item">
+                                    <div class="countdown-number" id="minutes">00</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                                <div class="col-3 countdown-item">
+                                    <div class="countdown-number" id="seconds">00</div>
+                                    <div class="countdown-label">Seconds</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mb-5">
+                            <h3>Be the first to know when we launch</h3>
+                            <div class="row justify-content-center mt-4">
+                                <div class="col-md-8">
+                                    <form>
+                                        <div class="input-group mb-3">
+                                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address">
+                                            <button class="btn btn-primary" type="submit">Notify Me</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-12 text-center mb-4">
+                        <h2 class="brand-font">WHAT'S COMING</h2>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="features-card">
+                            <div class="text-center">
+                                <i class="fas fa-dumbbell feature-icon"></i>
+                                <h4>Elite Training</h4>
+                            </div>
+                            <p>Professional training programs customized to your specific fitness goals and experience level.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="features-card">
+                            <div class="text-center">
+                                <i class="fas fa-heartbeat feature-icon"></i>
+                                <h4>Performance Tracking</h4>
+                            </div>
+                            <p>Advanced analytics to monitor your progress, recovery, and improvements over time.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="features-card">
+                            <div class="text-center">
+                                <i class="fas fa-users feature-icon"></i>
+                                <h4>Community Support</h4>
+                            </div>
+                            <p>Join a community of like-minded individuals dedicated to pushing their limits and achieving greatness.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-8 text-center">
+                        <div class="social-icons mt-5">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2025 Potenza Fitness. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p><a href="#" style="color: var(--text-body); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--text-body); text-decoration: none;">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        const countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 30); // Launch in 30 days
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
 </html>
